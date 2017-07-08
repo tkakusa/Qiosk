@@ -3,24 +3,116 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Foundation</title>
+		<title>Qiosk</title>
 		<link rel="stylesheet" href="stylesheets/app.css" />
 		<script src="bower_components/modernizr/modernizr.js"></script>
 	</head>
 	<body>
-		<div class="row">
-			<div class="large-12 medium-12 columns">
-				<div class="large-6 medium-6 large-centered medium-centered columns">
-					<p>Let's get started...</p>
+		<div class="row main">
+			<div class="row">
+				<div class="large-6 medium-6 large-centered medium-centered columns welcome">
+					<h2>Let's get started...</h2>
 				</div>	
 			</div>
-			<div class="large-3 medium-3 large-centered medium-centered columns">
-				<a href="#">placeholder</a>
+			<div class="row">
+				<div class="large-1 medium-1 small-2 large-centered medium-centered small-centered columns go">
+					<a href="#next">
+						<img src="../icons/png/success.png" width=50px height=50px/>
+					</a>
+				</div>
 			</div>
 		</div>
 
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="bower_components/foundation/js/foundation.min.js"></script>
-		<script src="js/app.js"></script>
-	</body>
-</html>
+		<div id="next" class="continue">
+			<div class="row">
+				<div class="large-6 medium-6 columns login">
+					<div class="form-box large-11 medium-11">
+						<div class="row">
+							<div class="large-10 medium-10 large-centered medium-centered columns">
+								<form>
+									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="text" name="username" placeholder="username"/>
+										</div>
+									</div>
+									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="password" name="password" placeholder="password"/>
+										</div>
+									</div>
+									<div class="row"> 
+										<div class="large-12 large-centered columns">
+											<input type="submit" class="button expand" value="Log In"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="signup-worker" class="large-6 medium-6 columns signup">
+						<div class="form-box large-11 medium-11 right">
+							<div class="row">
+								<div class="large-10 medium-10 large-centered medium-centered columns">
+									<form>
+										<div class="row"> 
+											<div class="large-12 columns">
+												<input type="text" name="username" placeholder="username"/>
+											</div>
+										</div>
+										<div class="row"> 
+											<div class="large-12 columns">
+												<input type="password" name="password" placeholder="password"/>
+											</div>
+										</div>
+										<div class="row"> 
+											<div class="large-12 large-centered columns">
+												<input type="submit" class="button expand" value="Find Jobs!"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="large-12 large-centered columns">
+												<a id="swap2employer">Sign up as Employer</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<div id="signup-employer" class="large-6 medium-6 columns signup hide">
+						<div class="form-box large-11 medium-11 right">
+							<div class="row">
+								<div class="large-10 medium-10 large-centered medium-centered columns">
+									<form>
+										<div class="row"> 
+											<div class="large-12 columns">
+												<input type="text" name="username" placeholder="username"/>
+											</div>
+										</div>
+										<div class="row"> 
+											<div class="large-12 columns">
+												<input type="password" name="password" placeholder="password"/>
+											</div>
+										</div>
+										<div class="row"> 
+											<div class="large-12 large-centered columns">
+												<input type="submit" class="button expand" value="Post a Job!"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="large-12 large-centered columns">
+												<a id="swap2worker">Sign up as Worker</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script src="bower_components/jquery/dist/jquery.min.js"></script>
+				<script src="bower_components/foundation/js/foundation.min.js"></script>
+				<script src="js/app.js"></script>
+				<script src="js/welcome_form.js"></script>
+			</body>
+		</html>
