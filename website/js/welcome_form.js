@@ -25,7 +25,7 @@ $(document).ready(function() {
 				data: $("#form-signin").serialize(),
 				contentType: "application/x-www-form-urlencoded",
 				success: function(responseData, textStatus, jqXHR) {
-					Cookies.set('token', responseData);
+					localStorage.setItem('token',responseData);
 					window.location.replace("./hub.html");
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
@@ -39,10 +39,10 @@ $(document).ready(function() {
 				type: "post",
 				url: "http://10.73.172.61:8000/createUser/",
 				crossDomain: true,
-				data: $("#form-signin").serialize(),
+				data: $("#form-signup-worker").serialize(),
 				contentType: "application/x-www-form-urlencoded",
 				success: function(responseData, textStatus, jqXHR) {
-					Cookies.set('token', responseData);
+					localStorage.setItem('token',responseData);
 					window.location.replace("./hub.html");
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
@@ -56,10 +56,10 @@ $(document).ready(function() {
 				type: "post",
 				url: "http://10.73.172.61:8000/createEmployer/",
 				crossDomain: true,
-				data: $("#form-signin").serialize(),
+				data: $("#form-signup-employer").serialize(),
 				contentType: "application/x-www-form-urlencoded",
 				success: function(responseData, textStatus, jqXHR) {
-					Cookies.set('token', responseData);
+					localStorage.setItem('token',responseData);
 					window.location.replace("./hub.html");
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
