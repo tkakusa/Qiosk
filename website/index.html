@@ -8,6 +8,7 @@
 		<script src="bower_components/modernizr/modernizr.js"></script>
 	</head>
 	<body>
+		
 		<div class="row main">
 			<div class="row">
 				<div class="large-6 medium-6 large-centered medium-centered columns welcome">
@@ -29,24 +30,33 @@
 					<div class="form-box large-11 medium-11">
 						<div class="row">
 							<div class="large-10 medium-10 large-centered medium-centered columns">
+								<div class="row"> 				
+									<div class="large-10 medium-10 large-centered medium-centered columns">
+										
+										<form id="form-signin" >
+											
+											<div class="row"> 
+												<div class="large-12 columns">
+													<video id="localVideo" width="300" height="240" autoplay></video>
+													<canvas style="display: inline; position: absolute; top: 12px;" id="localCanvas" width="300" height="240"></canvas>
+													<input type="text" name="username" placeholder="username"/>
+												</div>
+												<div class="row"> 
+													<div class="large-12 columns">
+														<input type="password" name="password" placeholder="password" />
+													</div>
+												</div>
+												<div class="row"> 
+													<div class="large-12 large-centered columns">
+														<input type="submit" class="button expand" value="Log In"/>
+													</div>
+												</div>
+											</div>
+										</form>
 
-								<form id="form-signin" >
-									<div class="row"> 
-										<div class="large-12 columns">
-											<input type="text" name="username" placeholder="username"/>
-										</div>
-									</div>
-									<div class="row"> 
-										<div class="large-12 columns">
-											<input type="password" name="password" placeholder="password" />
-										</div>
-									</div>
-									<div class="row"> 
-										<div class="large-12 large-centered columns">
-											<input type="submit" class="button expand" value="Log In"/>
-										</div>
-									</div>
-								</form>
+									</div>					
+									
+								</div>
 
 							</div>
 						</div>
@@ -139,8 +149,11 @@
 				</div>
 			</div>
 		</div>
+		
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/foundation/js/foundation.min.js"></script>
+		<script src="js/ccv.js"></script>
+		<script src="js/face.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/js.cookie.js"></script>
 		<script src="js/welcome_form.js"></script>
