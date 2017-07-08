@@ -79,7 +79,7 @@ $(document).ready(function() {
 });
 
 function fillInitial(json) {
-	alert('Initial');
+	//alert('Initial');
 	document.getElementById("brief-name").innerHTML = json.firstName + ' ' + json.lastName;
 	document.getElementById("brief-money").innerHTML = "$" + json.accountBalance;
 	document.getElementById("brief-rating").innerHTML = json.rating;

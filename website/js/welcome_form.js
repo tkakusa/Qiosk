@@ -47,7 +47,7 @@ $(document).ready(function() {
 					window.location.replace("./hub.html");
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
-					alert("Missing Field");
+					//alert("Missing Field");
 				}
 		});
 	});
