@@ -4,6 +4,7 @@ $(document).ready(function() {
 		$('#nav-profile').addClass('active');
 		$('#nav-browse').removeClass('active');
 		$('#nav-current').removeClass('active');	
+		
 	});	
 	
 	$('#nav-browse').click(function() {
@@ -23,4 +24,5 @@ $(document).ready(function() {
 	$('#logout').click(function() {
 		document.location.href="./index.html";
 	});
+
 });

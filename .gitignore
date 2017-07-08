@@ -2,3 +2,9 @@
 /.sass-cache/*
 *.DS_Store
 /stylesheets/*
+
+mysite/
+
+FacialRecognitionAndroid/
+
+FacialRecognitionDBoard/
