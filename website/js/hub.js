@@ -1,5 +1,20 @@
 $(document).ready(function() {
 
+	$.ajax({
+			type: 'GET',
+			url: "http://10.73.172.61:8000/profile/"+localStorage.getItem('token'),
+			crossDomain: true,
+			data: {
+			},
+			contentType: "application/x-www-form-urlencoded",
+			success: function(responseData, textStatus, jqXHR) {
+				fillInitial(responseData);					
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				//alert("Browse Issue");
+			}
+	});
+
 
 
 	$('#nav-profile').click(function() {
@@ -63,6 +78,13 @@ $(document).ready(function() {
 
 });
 
+function fillInitial(json) {
+	alert('Initial');
+	document.getElementById("brief-name").innerHTML = json.firstName + ' ' + json.lastName;
+	document.getElementById("brief-money").innerHTML = "$" + json.accountBalance;
+	document.getElementById("brief-rating").innerHTML = json.rating;
+}
+
 function fillJobs(json) {
 	for (var i = 0; i < json.length; i++) {
 		var obj = json[i];
@@ -107,4 +129,4 @@ function fillJobs(json) {
 			});
 		}
 	});
-	}
+}
