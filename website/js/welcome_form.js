@@ -69,7 +69,7 @@ $(document).ready(function() {
 		});
 	});
 });
-
+/*
 var localVideo;
     var localCanvas;
 
@@ -97,7 +97,7 @@ poll = function() {
                                 "cascade" : cascade,
                                 "interval" : 5,
                                 "min_neighbors" : 1 });
-  /* draw detected area */
+  /* draw detected area /
   localCanvas.width = localVideo.clientWidth;
   localCanvas.height = localVideo.clientHeight;
 
@@ -153,4 +153,4 @@ onFailedStream = function(error) {
 }
 
 
-setTimeout(initialize, 1);
+setTimeout(initialize, 1);*/
