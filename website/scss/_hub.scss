@@ -30,6 +30,7 @@
 
 
 .current {
+	position: fixed;
 	background-color: $dark-gray;
 	height: 68px;
 	width: 68px;
@@ -55,6 +56,13 @@
 .hub {
 	height:100%;
 	background-color: $light-gray;
+	padding-top: 0px;
+
+	h2 {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 1em;
+	}
 }
 
 .info-brief {
@@ -79,3 +87,69 @@
 	border-bottom: 1px solid black;
 	background-color: black;
 }
+
+.card {
+	padding:20px;
+	border-radius:25px;
+	border: 1px solid $dark-blue;
+	background-color: $light-blue;
+	min-height: 150px;
+	margin-bottom: 2em;
+
+	p {
+		margin: 0;
+		&.tiny {
+			font-size: 0.5em;
+		}
+	}
+
+	h2 {
+		margin: 0;
+	}
+
+	.button {
+		margin-top: 25px;
+		height: 50px;
+		background-color: $light-blue;
+		border: 2px solid $dark-blue;
+		border-radius: 15px;
+
+		&:hover {
+			background-color: $dark-blue;
+		}
+	}
+
+	.edit-profile {
+		position:absolute;
+		left:78%;
+		top:340px;
+		z-index:2;
+		padding:10px;
+		border: 2px solid $dark-blue;
+		background-color: $light-blue;
+		border-radius:15px;
+		font-size:1em;
+		color:$white;
+		transition: background-color 300ms ease-out;
+		&:hover {
+			background-color: $dark-blue;
+		}
+	}
+
+	&.job-card {
+		display: table;
+		
+		.job-table {
+			margin: 0 auto;
+			background-color: transparent;
+			border: 0px solid $dark-blue;
+
+			tr,
+			thead	{
+				background-color: transparent;
+			}
+
+		}
+	}
+}
+

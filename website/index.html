@@ -29,10 +29,87 @@
 					<div class="form-box large-11 medium-11">
 						<div class="row">
 							<div class="large-10 medium-10 large-centered medium-centered columns">
-								<form>
+
+								<form id="form-signin" >
 									<div class="row"> 
 										<div class="large-12 columns">
 											<input type="text" name="username" placeholder="username"/>
+										</div>
+									</div>
+									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="password" name="password" placeholder="password" />
+										</div>
+									</div>
+									<div class="row"> 
+										<div class="large-12 large-centered columns">
+											<input type="submit" class="button expand" value="Log In"/>
+										</div>
+									</div>
+								</form>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="signup-worker" class="large-6 medium-6 columns signup">
+					<div class="form-box large-11 medium-11 right">
+						<div class="row">
+							<div class="large-10 medium-10 large-centered medium-centered columns">
+								<form class="form-signup-worker" id="form-signup-worker">
+									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="text" name="username" id="username" placeholder="username"/>
+										</div>
+									</div>
+									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="text" id="firstName" name="firstName" placeholder="First Name"/>
+										</div>
+									</div>
+									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="text" name="lastName" id="lastName" placeholder="Last Name"/>
+										</div>
+									</div>
+									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="password" id="password" name="password" placeholder="password"/>
+										</div>
+									</div>
+									<div class="row"> 
+										<div class="large-12 large-centered columns">
+											<input type="submit" class="button expand" value="Find Jobs!"/>
+										</div>
+									</div>
+									<div class="row">
+										<div class="large-12 large-centered columns">
+											<a id="swap2employer">Sign up as Employer</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div id="signup-employer" class="large-6 medium-6 columns signup hide">
+					<div class="form-box large-11 medium-11 right">
+						<div class="row">
+							<div class="large-10 medium-10 large-centered medium-centered columns">
+								<form id="form-signup-employer">
+									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="text" name="username" placeholder="username"/>
+										</div>
+									</div>
+									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="text" name="firstName" placeholder="First Name"/>
+										</div>
+									</div>
+									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="text" name="lastName" placeholder="Last Name"/>
 										</div>
 									</div>
 									<div class="row"> 
@@ -41,78 +118,31 @@
 										</div>
 									</div>
 									<div class="row"> 
+										<div class="large-12 columns">
+											<input type="text" name="address" placeholder="Address"/>
+										</div>
+									</div>
+									<div class="row"> 
 										<div class="large-12 large-centered columns">
-											<input type="submit" class="button expand" value="Log In"/>
+											<input type="submit" class="button expand" value="Post a Job!"/>
 										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="signup-worker" class="large-6 medium-6 columns signup">
-						<div class="form-box large-11 medium-11 right">
-							<div class="row">
-								<div class="large-10 medium-10 large-centered medium-centered columns">
-									<form>
-										<div class="row"> 
-											<div class="large-12 columns">
-												<input type="text" name="username" placeholder="username"/>
-											</div>
-										</div>
-										<div class="row"> 
-											<div class="large-12 columns">
-												<input type="password" name="password" placeholder="password"/>
-											</div>
-										</div>
-										<div class="row"> 
-											<div class="large-12 large-centered columns">
-												<input type="submit" class="button expand" value="Find Jobs!"/>
-											</div>
-										</div>
-										<div class="row">
-											<div class="large-12 large-centered columns">
-												<a id="swap2employer">Sign up as Employer</a>
-											</div>
+									<div class="row">
+										<div class="large-12 large-centered columns">
+											<a id="swap2worker">Sign up as Worker</a>
 										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-					<div id="signup-employer" class="large-6 medium-6 columns signup hide">
-						<div class="form-box large-11 medium-11 right">
-							<div class="row">
-								<div class="large-10 medium-10 large-centered medium-centered columns">
-									<form>
-										<div class="row"> 
-											<div class="large-12 columns">
-												<input type="text" name="username" placeholder="username"/>
-											</div>
-										</div>
-										<div class="row"> 
-											<div class="large-12 columns">
-												<input type="password" name="password" placeholder="password"/>
-											</div>
-										</div>
-										<div class="row"> 
-											<div class="large-12 large-centered columns">
-												<input type="submit" class="button expand" value="Post a Job!"/>
-											</div>
-										</div>
-										<div class="row">
-											<div class="large-12 large-centered columns">
-												<a id="swap2worker">Sign up as Worker</a>
-											</div>
-										</div>
-									</div>
-								</div>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<script src="bower_components/jquery/dist/jquery.min.js"></script>
-				<script src="bower_components/foundation/js/foundation.min.js"></script>
-				<script src="js/app.js"></script>
-				<script src="js/welcome_form.js"></script>
-			</body>
-		</html>
+			</div>
+		</div>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/foundation/js/foundation.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/js.cookie.js"></script>
+		<script src="js/welcome_form.js"></script>
+	</body>
+</html>

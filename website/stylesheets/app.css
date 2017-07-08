@@ -9820,6 +9820,7 @@ div {
 
 /* line 32, ../scss/_hub.scss */
 .current {
+  position: fixed;
   background-color: #777a7d;
   height: 68px;
   width: 68px;
@@ -9829,37 +9830,44 @@ div {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 42, ../scss/_hub.scss */
+/* line 43, ../scss/_hub.scss */
 .current.top {
   margin-top: 9.6em;
 }
-/* line 46, ../scss/_hub.scss */
+/* line 47, ../scss/_hub.scss */
 .current.middle {
   margin-top: 15.6em;
 }
-/* line 50, ../scss/_hub.scss */
+/* line 51, ../scss/_hub.scss */
 .current.bottom {
   margin-top: 21.6em;
 }
 
-/* line 55, ../scss/_hub.scss */
+/* line 56, ../scss/_hub.scss */
 .hub {
   height: 100%;
   background-color: #fafafa;
+  padding-top: 0px;
+}
+/* line 61, ../scss/_hub.scss */
+.hub h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 1em;
 }
 
-/* line 60, ../scss/_hub.scss */
+/* line 68, ../scss/_hub.scss */
 .info-brief {
   padding-top: 2em;
   padding-bottom: 2em;
   border-bottom: 1px solid black;
   background-color: black;
 }
-/* line 62, ../scss/_hub.scss */
+/* line 70, ../scss/_hub.scss */
 .info-brief img {
   border-radius: 35px;
 }
-/* line 69, ../scss/_hub.scss */
+/* line 77, ../scss/_hub.scss */
 .info-brief .name p,
 .info-brief .name span,
 .info-brief .money p,
@@ -9869,4 +9877,71 @@ div {
   color: #b2b2b2;
   margin: 0;
   display: inline-block;
+}
+
+/* line 91, ../scss/_hub.scss */
+.card {
+  padding: 20px;
+  border-radius: 25px;
+  border: 1px solid #005daa;
+  background-color: #00a2b6;
+  min-height: 150px;
+  margin-bottom: 2em;
+}
+/* line 99, ../scss/_hub.scss */
+.card p {
+  margin: 0;
+}
+/* line 101, ../scss/_hub.scss */
+.card p.tiny {
+  font-size: 0.5em;
+}
+/* line 106, ../scss/_hub.scss */
+.card h2 {
+  margin: 0;
+}
+/* line 110, ../scss/_hub.scss */
+.card .button {
+  margin-top: 25px;
+  height: 50px;
+  background-color: #00a2b6;
+  border: 2px solid #005daa;
+  border-radius: 15px;
+}
+/* line 117, ../scss/_hub.scss */
+.card .button:hover {
+  background-color: #005daa;
+}
+/* line 122, ../scss/_hub.scss */
+.card .edit-profile {
+  position: absolute;
+  left: 78%;
+  top: 340px;
+  z-index: 2;
+  padding: 10px;
+  border: 2px solid #005daa;
+  background-color: #00a2b6;
+  border-radius: 15px;
+  font-size: 1em;
+  color: #fff;
+  transition: background-color 300ms ease-out;
+}
+/* line 134, ../scss/_hub.scss */
+.card .edit-profile:hover {
+  background-color: #005daa;
+}
+/* line 139, ../scss/_hub.scss */
+.card.job-card {
+  display: table;
+}
+/* line 142, ../scss/_hub.scss */
+.card.job-card .job-table {
+  margin: 0 auto;
+  background-color: transparent;
+  border: 0px solid #005daa;
+}
+/* line 147, ../scss/_hub.scss */
+.card.job-card .job-table tr,
+.card.job-card .job-table thead {
+  background-color: transparent;
 }
