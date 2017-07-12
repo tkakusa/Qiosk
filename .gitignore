@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.iml
 .gradle
 /local.properties
@@ -7,3 +8,15 @@
 /build
 /captures
 .externalNativeBuild
+=======
+/bower_components/*
+/.sass-cache/*
+*.DS_Store
+/stylesheets/*
+
+mysite/
+
+FacialRecognitionAndroid/
+
+FacialRecognitionDBoard/
+>>>>>>> ba83a9b12a56a1eb7bef686fa8f61044eb0e526e
