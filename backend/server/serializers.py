@@ -5,7 +5,7 @@ class UserModelSerializer(serializers.ModelSerializer):
 	
 	class Meta:
 		model = UserModel
-		fields = ('username', 'password', 'token', 'firstName', 'middleName', 'lastName', 'phoneNumber', 'address')
+		fields = ('username', 'password', 'accountBalance', 'rating', 'jobsDone', 'token', 'firstName', 'middleName', 'lastName', 'phoneNumber', 'address')
 
 class UserModelLoginSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -27,12 +27,13 @@ class TagSerializer(serializers.ModelSerializer):
 class JobSerializerEmployer(serializers.ModelSerializer):
 	class Meta:
 		model = Job
-		fields = ('pk', 'tags', 'employer', 'employeesPending', 'employeesAccepted', 'payment', 'description', 'startDate', 'postDate', 'numberPeopleNeeded', 'numberPeopleAccepted', 'status', 'address')
+		fields = ('pk', 'title', 'employer', 'employeesPending', 'employeesAccepted', 'payment', 'description', 'startDate', 'postDate', 'numberPeopleNeeded', 'numberPeopleAccepted', 'status', 'address')
 
 class JobSerializerEmployee(serializers.ModelSerializer):
+	employer = EmployerModelSerializer(read_only=True)
 	class Meta:
 		model = Job
-		fields = ('pk', 'tags', 'employer', 'payment', 'description', 'startDate', 'postDate', 'numberPeopleNeeded', 'numberPeopleAccepted', 'status', 'address')
+		fields = ('pk', 'title', 'tags', 'employer', 'payment', 'description', 'startDate', 'postDate', 'numberPeopleNeeded', 'numberPeopleAccepted', 'status', 'address')
 
 class JobJoinSerializer(serializers.ModelSerializer):
 	class Meta:

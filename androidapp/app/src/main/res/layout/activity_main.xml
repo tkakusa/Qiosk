@@ -17,13 +17,14 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="81dp"
-            android:textSize="32sp"
+            android:textSize="64sp"
             android:text="Welcome" />
 
         <Button
             android:id="@+id/goButton"
             android:layout_width="129dp"
             android:layout_height="94dp"
+            android:padding="50dp"
             android:background="@drawable/checked"/>
 
     </LinearLayout>

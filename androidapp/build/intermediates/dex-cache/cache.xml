@@ -3,174 +3,156 @@
 
     <item
         is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/66bbf9aaeede3e7818d50efebe875d100e2f5ec9/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_6837f99afd3d3e7c5c301eeecf423b1c56b19b96.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="023ee503b631f69511e335a061ea008f8da60f40">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/support-annotations-26.0.0-alpha1_382da97b51463be39d9fc67b80d3d1924435b6ea.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/7c5219e9a0822676065a68559d6e4e34ad733b7a/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_c5eda5f9a370a66514912320b6517d7d23f3167e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/b9bae542be66dea480d8ecfba5fa272062df8f0b/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="952944218ecedea1554a513dec0c14d570642843">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_fdf24716fba4db51d9a65ab2a219190505e4d090.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/a21442ef64f8549eb65f9d254835e984dac47bc0/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_ae3cd842dd7ced0b983433f13da9d961b5155070.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/70150380b8be6cd667431c303e34bb5ea8e64269/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_7b15266e1e1ff620e412d742a5452ca7021dcbbb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/9b53e5e46751ef808c66ba106f9a1bd4c8502f9f/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_2863afa833781cf42354d4227791b47b32a182e0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/fff954e01d2a13b7dca3655da68525b4f0926fb4/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_763f2585366bbdef7c2aae808325dc3e2b6aca8a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/e427d5cbdb66b424c09a97c9d9e444898ca81967/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_a3e2af8e240dd1cc3be3766094ffcc3634799408.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_abe42375f075e6a5a067b21998034a889e0f8a3d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/86e604f91bd2b429aac17d725a31c2fe5ccb7409/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_0d0a75c225d3842fd9563d5ccd224db2561f6d1c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/httpclient-4.3.6_1ee5987f1c26917e6d95ed8b107b9a7819bfe7d5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/964f2348a5f7694b545ccadfdfb497727e1652fc/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_9e851206113e85bf2a5723f1ac785ddd299d92db.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jar="C:\Users\Takondwa Kakusa\.gradle\caches\modules-2\files-2.1\com.loopj.android\android-async-http\1.4.9\386a4339ffe52d5d63e80f9bed8d2b1d1a418249\android-async-http-1.4.9.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.9_708e0d9b983ffaf8e34d3e27747ab3861466a1fa.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_61fb0ed866cb927d561d9610f4df96ab02d5c7e5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="0c87dc895e4adf17d5970faa380093a8ac1e339e">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_3274a93d9cd7519264b58c482861fd0c625c07cc/classes.dex" />
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.9_9ae6c2236dbbd1aecbf092abd0cb34c5d54b172e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/ed189bee97443187ccdcc535c167acebec206678/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_fcf1d23b0f5de65405a63b993e08d2e6b462c15f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/9984a8d67133295b6e63fc45ac6532d19379134a/output/jars/classes.jar"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\3d347597e64152247d8cf4af1e8b97fec2b6b007\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_e72e83adc9555d5e288cef84a7d940e0235dca90.jar" />
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_fa05bc2f801fff21e72e0ae09f2f84b24e8d2010.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/haileyhultquist/.android/build-cache/12042a00166d131ee33dea43a190bda5ab1172ab/output/jars/classes.jar"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\42f0c8a8f9015fee75ef4ee88e91d44b3fbf093a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_5d9bf4f315109c9c090104e16a95a25187cadcc3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\11246acd39c79d526c530da1be8d2e8075bad672\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_d1464563fee2e68830236ae675d96045b0e22270.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\96bb35e3b72504302f9af4393535f3c296fdfdc7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_fb6a298264f05a1328f8cbbda9ea62a029c46a4d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\661430eab92b89a6b5a5aa2ac9a21f98c91ebbcb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_d6a7ce8f45f316677dd7591d3343404c729546a5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\6b2732f76d1fce96a046e70851ec13caa549f514\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_d885498422e05aa040e26ebd1034e2007d3ec412.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\a96fedcb058dc0a8510250778ca4ed700daa55bc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_7892bf96dfbe607163fcdb6f6d9aaf3d14e6785a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.gradle\caches\modules-2\files-2.1\cz.msebera.android\httpclient\4.3.6\526a9f794eab830eae4f23a62c572878b3f491ab\httpclient-4.3.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\httpclient-4.3.6_df1f1a779dc357ae9ed2130d0e9789d646ed9471.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_3c9f5880fec0a880f40ecbbebb3a60ccb1f35afa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\eaf9c024c7ad46bdaa43b19e9585a5318584a6e2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_5b4b423837fd3ba5150f342c1d8d38ed9f354a99.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\7b7d147e5acf302c7afaf4c3252f259c171ddbdb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_f8007c7bbded4416b7256edbf23ea62c7d767ecf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\411889219a7f84ecda0e0b5a4fa4d1390334a72f\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="/Users/haileyhultquist/AndroidStudioProjects/Qiosk/app/build/intermediates/pre-dexed/debug/classes_dbd08c3e45bc52b78567128fc8930c1d430a63c4.jar" />
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_38cc2882f9ccfe5c1852388e946009224a1ffb1f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\eac4805374afb0cead5ca3d6fb0dc060f29a216c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_5f60bddfedfd23509e4e352504dd76f0fc6ee2ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\2f7d9c42de89ece30386deb2af8fde0f0d0b1eea\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_3f08dd7b070184e5e56195165c15ac24cdc37f1e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Takondwa Kakusa\.android\build-cache\7e3e7fbcca9ca2095691bba56ce014ff436598fb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\classes_9b2636b21f4ee2d748c08b162e9a9838dd642cb3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="D:\Takondwa Kakusa\Projects\Qiosk\androidapp\app\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_6c8e520b4b8bc88684c41fa789e63cce32bc80c4.jar" />
     </item>
 
 </items>

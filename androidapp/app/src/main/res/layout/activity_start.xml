@@ -6,38 +6,49 @@
     android:layout_height="match_parent"
     tools:context="com.example.haileyhultquist.qiosk.StartActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="100dp"
-        android:gravity="center_horizontal">
+        android:fitsSystemWindows="true">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="32sp"
-            android:text="Sign up or Sign in" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="56dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:weightSum="1">
 
-        <Button
-            android:id="@+id/signUpButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:text="SIGN UP"
-            android:background="#00a2b6"/>
+            <ImageView android:src="@drawable/logo2"
+                android:layout_width="wrap_content"
+                android:layout_height="144dp"
+                android:layout_marginBottom="24dp"
+                android:layout_gravity="center_horizontal" />
 
-        <Button
-            android:id="@+id/signInButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="SIGN IN"
-            android:background="#00a2b6"/>
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/signUpButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp"
+                android:background="#00a2b6"
+                android:text="SIGN UP"/>
 
-    </LinearLayout>
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/signInButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp"
+                android:background="#00a2b6"
+                android:text="SIGN IN"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 

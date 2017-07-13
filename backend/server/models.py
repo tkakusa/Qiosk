@@ -18,7 +18,9 @@ class UserModel(models.Model):
 	lastName = models.CharField(max_length=200)
 	phoneNumber = models.IntegerField(default=0)
 	address = models.CharField(max_length=200, blank=True, default='')
-	
+	accountBalance = models.FloatField(default=0)
+	jobsDone = models.IntegerField(default=0)
+	rating = models.IntegerField(default=0)
 	class Meta:
 		ordering = ('lastName',)
 
@@ -44,16 +46,16 @@ class Tag(models.Model):
 	
 	
 class Job(models.Model):
-	tags = models.ManyToManyField(Tag)
-	employer = models.ForeignKey(EmployerModel, related_name='jobEmployer', on_delete=models.CASCADE, default=0)
+	tags = models.ManyToManyField(Tag, blank=True)
+	employer = models.ForeignKey(EmployerModel, related_name='employer', on_delete=models.CASCADE, default=0)
 	employeesPending = models.ManyToManyField(UserModel, related_name='employeesPending', blank=True)
 	employeesAccepted = models.ManyToManyField(UserModel, related_name='employeesAccepted', blank=True)
 	payment = models.IntegerField(default=0)
 	title = models.CharField(max_length=500)
 	description = models.CharField(max_length=500)
-	startDate = models.DateTimeField()
+	startDate = models.DateTimeField(auto_now_add=True)
 	duration = models.IntegerField(default=0)
-	postDate = models.DateTimeField()
+	postDate = models.DateTimeField(auto_now_add=True)
 	numberPeopleNeeded = models.IntegerField(default=0)
 	numberPeopleAccepted = models.IntegerField(default=0)
 	status = models.CharField(max_length=10, blank=True, default='')

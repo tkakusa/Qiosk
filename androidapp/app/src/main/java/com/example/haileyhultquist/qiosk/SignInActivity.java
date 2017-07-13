@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -16,12 +19,18 @@ public class SignInActivity extends AppCompatActivity {
     private Button goButton;
     private EditText usernameText;
     private EditText passwordText;
+    private TextView signUpLink;
 
     private ServerRestClientUsage serverRestClientUsage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Remove title bar
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+
         setContentView(R.layout.activity_sign_in);
 
         setTitle("Sign In");
@@ -31,6 +40,7 @@ public class SignInActivity extends AppCompatActivity {
         goButton = (Button) findViewById(R.id.submit);
         usernameText = (EditText) findViewById(R.id.username);
         passwordText = (EditText) findViewById(R.id.password);
+        signUpLink = (TextView) findViewById(R.id.link_signup);
 
         serverRestClientUsage = new ServerRestClientUsage();
 
@@ -81,6 +91,13 @@ public class SignInActivity extends AppCompatActivity {
 
 
 
+            }
+        });
+        signUpLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signupIntent = new Intent(context, SignUpActivity.class);
+                startActivity(signupIntent);
             }
         });
     }

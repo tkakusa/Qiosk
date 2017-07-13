@@ -16,7 +16,7 @@ import cz.msebera.android.httpclient.entity.StringEntity;
 public class RestfulCalls {
 
     //private static final String BASE_URL = "http://ec2-34-209-243-205.us-west-2.compute.amazonaws.com:8080/";
-    private static final String BASE_URL = "http://10.73.172.61:8000/";
+    private static final String BASE_URL = "http://192.168.0.5:8000/";
     //For testing purposes
     //private static SyncHttpClient client = new SyncHttpClient();
 
