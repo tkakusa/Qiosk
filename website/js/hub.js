@@ -84,8 +84,11 @@ $(document).ready(function() {
 
 });
 
+function fillPendingJobs(response) {
+	
+}
+
 function getPendingJobs() {
-	var response;
 	$.ajax({
 			type: 'GET',
 			url: "http://"+ip+":8000/pendingJobs/",
@@ -98,14 +101,12 @@ function getPendingJobs() {
 				//'token' : localStorage.getItem('token')
 			},
 			success: function(responseData, textStatus, jqXHR) {
-				//alert(JSON.stringify(responseData));
-				response = responseData;				
+				document.getElementById("pending-jobs").innerHTML = responseData.length;		
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 				alert("Browse Issue");
 			}
 	});
-	return response;
 }
 
 function fillInitial(json) {
@@ -113,8 +114,8 @@ function fillInitial(json) {
 	document.getElementById("brief-name").innerHTML = json.firstName + ' ' + json.lastName;
 	document.getElementById("brief-money").innerHTML = "$" + json.accountBalance;
 	document.getElementById("brief-rating").innerHTML = json.rating;
-	document.getElementsByClassName("money").innerHTML = "<h2>$" + json.accountBalance;
-	var response = getPendingJobs();
+	document.getElementById("account-balance").innerHTML = "Balance: $" + json.accountBalance;
+	getPendingJobs();
 }
 
 function fillJobs(json) {
