@@ -1,5 +1,6 @@
 body {
 	background-color: $light-gray;
+	overflow: hidden;
 }
 
 .main {
@@ -19,7 +20,7 @@ body {
 .go {
 	img {
 		background-color: $dark-blue;
-		border-radius: 25px;
+		border-radius: 75px;
 		//-moz-transform: rotate(90deg);
 		//-o-transform: rotate(90deg);
 		//-ms-transform: rotate(90deg);

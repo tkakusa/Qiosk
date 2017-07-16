@@ -9738,15 +9738,16 @@ th.hide-for-touch {
 /* line 1, ../scss/_welcome.scss */
 body {
   background-color: #fafafa;
+  overflow: hidden;
 }
 
-/* line 5, ../scss/_welcome.scss */
+/* line 6, ../scss/_welcome.scss */
 .main {
   padding-top: 14em;
   height: 100%;
 }
 
-/* line 11, ../scss/_welcome.scss */
+/* line 12, ../scss/_welcome.scss */
 .welcome h2 {
   font-size: 2.5em;
   text-align: center;
@@ -9754,35 +9755,35 @@ body {
   color: #005daa;
 }
 
-/* line 19, ../scss/_welcome.scss */
+/* line 20, ../scss/_welcome.scss */
 .go {
   width: 150px;
   height: 150px;
 }
-/* line 20, ../scss/_welcome.scss */
+/* line 21, ../scss/_welcome.scss */
 .go img {
   background-color: #005daa;
-  border-radius: 25px;
+  border-radius: 75px;
 }
 
-/* line 32, ../scss/_welcome.scss */
+/* line 33, ../scss/_welcome.scss */
 .continue {
   background-color: #00a2b6;
   height: 100%;
 }
 
-/* line 37, ../scss/_welcome.scss */
+/* line 38, ../scss/_welcome.scss */
 .form-box {
   background-color: #fafafa;
   margin-top: 10em;
   padding: 3em 0em;
   border-radius: 2em;
 }
-/* line 43, ../scss/_welcome.scss */
+/* line 44, ../scss/_welcome.scss */
 .form-box .button {
   background-color: #00a2b6;
 }
-/* line 46, ../scss/_welcome.scss */
+/* line 47, ../scss/_welcome.scss */
 .form-box .button:hover {
   background-color: #005daa;
 }
@@ -9850,29 +9851,30 @@ div {
 
 /* line 56, ../scss/_hub.scss */
 .hub {
+  overflow: auto;
   height: 100%;
   background-color: #fafafa;
   padding-top: 0px;
 }
-/* line 61, ../scss/_hub.scss */
+/* line 62, ../scss/_hub.scss */
 .hub h2 {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 1em;
 }
 
-/* line 68, ../scss/_hub.scss */
+/* line 69, ../scss/_hub.scss */
 .info-brief {
   padding-top: 2em;
   padding-bottom: 2em;
   border-bottom: 1px solid black;
   background-color: black;
 }
-/* line 70, ../scss/_hub.scss */
+/* line 71, ../scss/_hub.scss */
 .info-brief img {
   border-radius: 35px;
 }
-/* line 77, ../scss/_hub.scss */
+/* line 78, ../scss/_hub.scss */
 .info-brief .name p,
 .info-brief .name span,
 .info-brief .money p,
@@ -9884,7 +9886,7 @@ div {
   display: inline-block;
 }
 
-/* line 91, ../scss/_hub.scss */
+/* line 92, ../scss/_hub.scss */
 .card {
   padding: 20px;
   border-radius: 25px;
@@ -9893,19 +9895,19 @@ div {
   min-height: 150px;
   margin-bottom: 2em;
 }
-/* line 99, ../scss/_hub.scss */
+/* line 100, ../scss/_hub.scss */
 .card p {
   margin: 0;
 }
-/* line 101, ../scss/_hub.scss */
+/* line 102, ../scss/_hub.scss */
 .card p.tiny {
   font-size: 0.5em;
 }
-/* line 106, ../scss/_hub.scss */
+/* line 107, ../scss/_hub.scss */
 .card h2 {
   margin: 0;
 }
-/* line 110, ../scss/_hub.scss */
+/* line 111, ../scss/_hub.scss */
 .card .button {
   margin-top: 25px;
   height: 50px;
@@ -9913,11 +9915,11 @@ div {
   border: 2px solid #005daa;
   border-radius: 15px;
 }
-/* line 117, ../scss/_hub.scss */
+/* line 118, ../scss/_hub.scss */
 .card .button:hover {
   background-color: #005daa;
 }
-/* line 122, ../scss/_hub.scss */
+/* line 123, ../scss/_hub.scss */
 .card .edit-profile {
   position: absolute;
   left: 78%;
@@ -9931,21 +9933,21 @@ div {
   color: #fff;
   transition: background-color 300ms ease-out;
 }
-/* line 134, ../scss/_hub.scss */
+/* line 135, ../scss/_hub.scss */
 .card .edit-profile:hover {
   background-color: #005daa;
 }
-/* line 139, ../scss/_hub.scss */
+/* line 140, ../scss/_hub.scss */
 .card.job-card {
   display: table;
 }
-/* line 142, ../scss/_hub.scss */
+/* line 143, ../scss/_hub.scss */
 .card.job-card .job-table {
   margin: 0 auto;
   background-color: transparent;
   border: 0px solid #005daa;
 }
-/* line 147, ../scss/_hub.scss */
+/* line 148, ../scss/_hub.scss */
 .card.job-card .job-table tr,
 .card.job-card .job-table thead {
   background-color: transparent;

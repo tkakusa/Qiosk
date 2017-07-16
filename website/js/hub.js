@@ -1,12 +1,17 @@
+var ip = '192.168.0.5';
 $(document).ready(function() {
 
 	$.ajax({
 			type: 'GET',
-			url: "http://10.73.172.61:8000/profile/"+localStorage.getItem('token'),
+			url: "http://"+ip+":8000/profile/",
+			headers: {
+				'Authorization':localStorage.getItem('token'),
+				'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+			},
 			crossDomain: true,
 			data: {
 			},
-			contentType: "application/x-www-form-urlencoded",
+			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 			success: function(responseData, textStatus, jqXHR) {
 				fillInitial(responseData);					
 			},
@@ -14,8 +19,6 @@ $(document).ready(function() {
 				//alert("Browse Issue");
 			}
 	});
-
-
 
 	$('#nav-profile').click(function() {
 		$('#current').removeClass('top middle bottom').addClass('top');
@@ -34,12 +37,15 @@ $(document).ready(function() {
 
 		$.ajax({
 				type: 'GET',
-				url: "http://10.73.172.61:8000/list/"+localStorage.getItem('token'),
+				url: "http://"+ip+":8000/list/",
+				headers: {
+					'Authorization':localStorage.getItem('token'),
+					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+				},
 				crossDomain: true,
 				data: {
 					//'token' : localStorage.getItem('token')
 				},
-				contentType: "application/x-www-form-urlencoded",
 				success: function(responseData, textStatus, jqXHR) {
 					//alert(JSON.stringify(responseData));
 					fillJobs(responseData);					
@@ -78,11 +84,37 @@ $(document).ready(function() {
 
 });
 
+function getPendingJobs() {
+	var response;
+	$.ajax({
+			type: 'GET',
+			url: "http://"+ip+":8000/pendingJobs/",
+			headers: {
+				'Authorization':localStorage.getItem('token'),
+				'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+			},
+			crossDomain: true,
+			data: {
+				//'token' : localStorage.getItem('token')
+			},
+			success: function(responseData, textStatus, jqXHR) {
+				//alert(JSON.stringify(responseData));
+				response = responseData;				
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				alert("Browse Issue");
+			}
+	});
+	return response;
+}
+
 function fillInitial(json) {
 	//alert('Initial');
 	document.getElementById("brief-name").innerHTML = json.firstName + ' ' + json.lastName;
 	document.getElementById("brief-money").innerHTML = "$" + json.accountBalance;
 	document.getElementById("brief-rating").innerHTML = json.rating;
+	document.getElementsByClassName("money").innerHTML = "<h2>$" + json.accountBalance;
+	var response = getPendingJobs();
 }
 
 function fillJobs(json) {
@@ -114,12 +146,15 @@ function fillJobs(json) {
 			var pk = id.replace("accept","");
 			$.ajax({
 					type: 'POST',
-					url: "http://10.73.172.61:8000/joinJob/"+localStorage.getItem('token')+'/', 
+					url: "http://"+ip+":8000/joinJob/",
+					headers: {
+						'Authorization':localStorage.getItem('token'),
+						'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+					},
 					crossDomain: true,
 					data: {
 						'pk'	  : pk
 					},
-					contentType: "application/x-www-form-urlencoded",
 					success: function(responseData, textStatus, jqXHR) {
 						alert('Joined!');
 					},

@@ -54,6 +54,7 @@
 }
 
 .hub {
+	overflow: auto;
 	height:100%;
 	background-color: $light-gray;
 	padding-top: 0px;
