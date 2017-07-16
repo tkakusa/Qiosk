@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var ip = '10.73.172.61';
+	var ip = '192.168.0.5';
 
 	$('#swap2employer').click(function() {
 		//hide worker form
