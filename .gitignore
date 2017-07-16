@@ -20,3 +20,11 @@ FacialRecognitionAndroid/
 
 FacialRecognitionDBoard/
 >>>>>>> ba83a9b12a56a1eb7bef686fa8f61044eb0e526e
+
+*.pyc
+
+backend/get-pip\.py
+
+backend/node_modules/compass/
+
+website/node_modules/compass/
