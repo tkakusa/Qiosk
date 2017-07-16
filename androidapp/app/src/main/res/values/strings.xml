@@ -24,14 +24,16 @@
 
     <!-- Navigation Drawer menu labels -->
     <string name="nav_profile">Profile</string>
-    <string name="nav_browse">Browse</string>
-    <string name="nav_current">Current</string>
+    <string name="nav_browse">Browse Jobs</string>
+    <string name="nav_current">Current Jobs</string>
+    <string name="nav_create">Create Job</string>
 
     <!-- Toolbar titles when navigation menu item is selected -->
     <string-array name="nav_item_activity_titles">
+        <item>Browse Jobs</item>
+        <item>Current Jobs</item>
+        <item>Create Job</item>
         <item>Profile</item>
-        <item>Browse</item>
-        <item>Current</item>
     </string-array>
 
     <string name="action_logout">Logout</string>

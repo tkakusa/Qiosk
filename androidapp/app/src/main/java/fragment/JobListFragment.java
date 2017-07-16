@@ -1,14 +1,31 @@
 package fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import com.example.haileyhultquist.qiosk.Job;
+import com.example.haileyhultquist.qiosk.JobAdapter;
+import com.example.haileyhultquist.qiosk.JobViewActivity;
 import com.example.haileyhultquist.qiosk.R;
+import com.example.haileyhultquist.qiosk.ServerRestClientUsage;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import activity.NavigationActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,14 +36,16 @@ import com.example.haileyhultquist.qiosk.R;
  * create an instance of this fragment.
  */
 public class JobListFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    // parameters
+    private String key;
+    private String userType;
+
+    private ArrayList<Job> jobsArrayList;
+
+    private ServerRestClientUsage serverRestClientUsage;
+
+    private ListView jobListingsView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -46,8 +65,6 @@ public class JobListFragment extends Fragment {
     public static JobListFragment newInstance(String param1, String param2) {
         JobListFragment fragment = new JobListFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -55,17 +72,67 @@ public class JobListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_job_list, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_job_list, container, false);
+
+        jobListingsView = (ListView) view.findViewById(R.id.job_listings);
+
+        serverRestClientUsage = new ServerRestClientUsage();
+
+        if (getArguments() != null) {
+            key = getArguments().getString("key");
+            userType = getArguments().getString("userType");
+
+            serverRestClientUsage.getJobs(key, new ServerRestClientUsage.Callback<String>() {
+                @Override
+                public void onResponse(String s) throws JSONException {
+                    jobsArrayList = new ArrayList<Job>();
+                    JSONArray jsonArray = new JSONArray(s);
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject j = ((JSONObject)(jsonArray.get(i)));
+                        jobsArrayList.add(new Job(j.getString("title"),
+                                j.getString("description"),
+                                j.getString("payment"),
+                                j.getString("pk")));
+                    }
+                    JobAdapter adapter = new JobAdapter(getActivity(), jobsArrayList);
+                    jobListingsView.setAdapter(adapter);
+                }
+            });
+
+            jobListingsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                @Override
+                public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id) {
+                    if (userType.equals("employer")) {
+                        Toast.makeText(getActivity(), "ONLY EMPLOYEES CAN VIEW JOBS", Toast.LENGTH_LONG).show();
+                    }
+                    else {
+                        Job selectedJob = jobsArrayList.get(position);
+
+                        Intent detailIntent = new Intent(getActivity(), JobViewActivity.class);
+
+                        detailIntent.putExtra("title", selectedJob.getTitle());
+                        detailIntent.putExtra("userType", userType);
+                        detailIntent.putExtra("status", "Wposted");
+                        detailIntent.putExtra("previous", "job_board");
+                        detailIntent.putExtra("key", key);
+                        detailIntent.putExtra("pk", selectedJob.getPK());
+                        Log.d("searchforthis", "the pk issss " + selectedJob.getPK());
+
+                        startActivity(detailIntent);
+                    }
+                }
+            });
+        }
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -78,12 +145,14 @@ public class JobListFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        /*
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+        */
     }
 
     @Override

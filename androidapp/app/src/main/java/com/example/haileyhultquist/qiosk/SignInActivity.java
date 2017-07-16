@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 
+import activity.NavigationActivity;
+
 public class SignInActivity extends AppCompatActivity {
 
     private Button goButton;
@@ -63,7 +65,12 @@ public class SignInActivity extends AppCompatActivity {
                             detailIntent.putExtra("userType", "employer");
                             detailIntent.putExtra("key", key);
 
-                            startActivity(detailIntent);
+                            //startActivity(detailIntent);
+
+                            Intent intent = new Intent(context, NavigationActivity.class);
+                            intent.putExtra("userType", "employer");
+                            intent.putExtra("key", key);
+                            startActivity(intent);
                         } else {
                             // Try as an employee
                             serverRestClientUsage.loginWorker(context, username, password, new ServerRestClientUsage.Callback<String>() {
@@ -74,12 +81,17 @@ public class SignInActivity extends AppCompatActivity {
 
                                         String key = s;
 
-                                        Intent detailIntent = new Intent(context, UserActivity.class);;
+                                        Intent detailIntent = new Intent(context, UserActivity.class);
 
                                         detailIntent.putExtra("userType", "worker");
                                         detailIntent.putExtra("key", key);
 
-                                        startActivity(detailIntent);
+                                        //startActivity(detailIntent);
+
+                                        Intent intent = new Intent(context, NavigationActivity.class);
+                                        intent.putExtra("userType", "worker");
+                                        intent.putExtra("key", key);
+                                        startActivity(intent);
                                     } else {
                                         Toast.makeText(SignInActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
                                     }

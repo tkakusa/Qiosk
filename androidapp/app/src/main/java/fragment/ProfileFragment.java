@@ -1,14 +1,22 @@
 package fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.haileyhultquist.qiosk.AddJobActivity;
+import com.example.haileyhultquist.qiosk.JobListingActivity;
 import com.example.haileyhultquist.qiosk.R;
+import com.example.haileyhultquist.qiosk.ServerRestClientUsage;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,14 +27,16 @@ import com.example.haileyhultquist.qiosk.R;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    // parameters
+    private String key;
+    private String userType;
+
+    private ServerRestClientUsage serverRestClientUsage;
+
+    private TextView nameTextView;
+    private TextView balanceTextView;
+    private TextView userTypeView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -36,18 +46,17 @@ public class ProfileFragment extends Fragment {
 
     /**
      * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
+     * this fragment using the provided parameter.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+     * @param key key to be used.
      * @return A new instance of fragment ProfileFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProfileFragment newInstance(String param1, String param2) {
+    public static ProfileFragment newInstance(String key, String userType) {
         ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString("key", key);
+        args.putString("userType", userType);
         fragment.setArguments(args);
         return fragment;
     }
@@ -55,17 +64,41 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        nameTextView = (TextView) view.findViewById(R.id.name);
+        balanceTextView = (TextView) view.findViewById(R.id.balance);
+        userTypeView = (TextView) view.findViewById(R.id.userType);
+
+
+        if (getArguments() != null) {
+            key = getArguments().getString("key");
+            userType = getArguments().getString("userType");
+
+            serverRestClientUsage = new ServerRestClientUsage();
+            serverRestClientUsage.getUserData(key, new ServerRestClientUsage.Callback<String>() {
+                @Override
+                public void onResponse(String s) throws JSONException {
+                    JSONObject jsonObject = new JSONObject(s);
+                    nameTextView.setText(jsonObject.getString("firstName") + " " + jsonObject.getString("lastName"));
+                    balanceTextView.setText("Account balance: " + jsonObject.getString("accountBalance"));
+                }
+            });
+
+            if (userType.equals("employer")) {
+                userTypeView.setText("EMPLOYER");
+            } else {
+                userTypeView.setText("WORKER");
+            }
+        }
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -78,12 +111,14 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        /*
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+        */
     }
 
     @Override
