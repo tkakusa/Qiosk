@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	var ip = '10.73.172.61';
+
 	$('#swap2employer').click(function() {
 		//hide worker form
 		$('#signup-worker').addClass('hide');
@@ -15,13 +17,10 @@ $(document).ready(function() {
 		$('#signup-worker').removeClass('hide');
 	});
 		
-});
-
-$(document).ready(function() {
 	$("#form-signin").submit(function(e){
 		$.ajax({
 				type: "post",
-				url: "http://10.73.172.61:8000/loginUser/",
+				url: "http://"+ip+":8000/loginUser/",
 				crossDomain: true,
 				data: $("#form-signin").serialize(),
 				contentType: "application/x-www-form-urlencoded",
@@ -38,7 +37,7 @@ $(document).ready(function() {
 	$("#form-signup-worker").submit(function(e){
 		$.ajax({
 				type: "post",
-				url: "http://10.73.172.61:8000/createUser/",
+				url: "http://"+ip+":8000/createUser/",
 				crossDomain: true,
 				data: $("#form-signup-worker").serialize(),
 				contentType: "application/x-www-form-urlencoded",
@@ -55,7 +54,7 @@ $(document).ready(function() {
 	$("#form-signup-employer").submit(function(e){
 		$.ajax({
 				type: "post",
-				url: "http://10.73.172.61:8000/createEmployer/",
+				url: "http://"+ip+":8000/createEmployer/",
 				crossDomain: true,
 				data: $("#form-signup-employer").serialize(),
 				contentType: "application/x-www-form-urlencoded",

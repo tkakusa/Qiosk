@@ -1,8 +1,9 @@
 $(document).ready(function() {
+	var ip = '10.73.172.61';
 
 	$.ajax({
 			type: 'GET',
-			url: "http://10.73.172.61:8000/profile/"+localStorage.getItem('token'),
+			url: "http://"+ip+":8000/profile/"+localStorage.getItem('token'),
 			crossDomain: true,
 			data: {
 			},
@@ -34,7 +35,7 @@ $(document).ready(function() {
 
 		$.ajax({
 				type: 'GET',
-				url: "http://10.73.172.61:8000/list/"+localStorage.getItem('token'),
+				url: "http://"+ip+":8000/list/"+localStorage.getItem('token'),
 				crossDomain: true,
 				data: {
 					//'token' : localStorage.getItem('token')
@@ -114,7 +115,7 @@ function fillJobs(json) {
 			var pk = id.replace("accept","");
 			$.ajax({
 					type: 'POST',
-					url: "http://10.73.172.61:8000/joinJob/"+localStorage.getItem('token')+'/', 
+					url: "http://"+ip+":8000/joinJob/"+localStorage.getItem('token')+'/', 
 					crossDomain: true,
 					data: {
 						'pk'	  : pk
