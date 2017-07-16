@@ -1,14 +1,28 @@
 package fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
 
+import com.example.haileyhultquist.qiosk.Job;
+import com.example.haileyhultquist.qiosk.JobAdapter;
+import com.example.haileyhultquist.qiosk.JobViewActivity;
 import com.example.haileyhultquist.qiosk.R;
+import com.example.haileyhultquist.qiosk.ServerRestClientUsage;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +37,19 @@ public class CurrentFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private String userType;
+    private String key;
+    private String status;
+
+    private ListView ipJobsView;
+    private ListView pendingJobsView;
+    private ArrayList<Job> ipJobsArrayList;
+    private ArrayList<Job> pendingJobsArrayList;
+
+    private ServerRestClientUsage serverRestClientUsage;
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -55,16 +82,104 @@ public class CurrentFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        View view = inflater.inflate(R.layout.fragment_current, container, false);
+
+
+        ipJobsView = (ListView) view.findViewById(R.id.ip_job_list);
+        pendingJobsView = (ListView) view.findViewById(R.id.pending_job_list);
+
+        serverRestClientUsage = new ServerRestClientUsage();
+
+        if (getArguments() != null) {
+            key = getArguments().getString("key");
+            userType = getArguments().getString("userType");
+        }
+
+        if (userType.equals("worker")) {
+            status = "W";
+        } else {
+            status = "E";
+            serverRestClientUsage.getJobs(key, new ServerRestClientUsage.Callback<String>() {
+                @Override
+                public void onResponse(String s) throws JSONException {
+                    ipJobsArrayList = new ArrayList<Job>();
+                    JSONArray jsonArray = new JSONArray(s);
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject j = ((JSONObject)(jsonArray.get(i)));
+                        if (!j.getString("status").equals("open")) {
+                            continue;
+                        }
+                        ipJobsArrayList.add(new Job(j.getString("title"),
+                                j.getString("description"),
+                                j.getString("payment"),
+                                j.getString("pk")));
+                    }
+                    JobAdapter adapter = new JobAdapter(getActivity(), ipJobsArrayList);
+                    ipJobsView.setAdapter(adapter);
+                }
+            });
+        }
+
+        /*
+        ipJobsArrayList = new ArrayList<Job>();
+        ipJobsArrayList.add(new Job("Paint the wall", "My house", 19));
+        ipJobsArrayList.add(new Job("Change my car's tire", "Building Q", 15));
+        ipJobsArrayList.add(new Job("Mow my lawn", "The Villas", 5));
+        JobAdapter adapter = new JobAdapter(this, ipJobsArrayList);
+        ipJobsView.setAdapter(adapter);*/
+
+        pendingJobsArrayList = new ArrayList<Job>();
+        pendingJobsArrayList.add(new Job("Do my homework", "The library", "10", "10"));
+        JobAdapter adapter2 = new JobAdapter(getActivity().getApplicationContext(), pendingJobsArrayList);
+        pendingJobsView.setAdapter(adapter2);
+
+        ipJobsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id) {
+                Job selectedJob = ipJobsArrayList.get(position);
+
+                Intent detailIntent = new Intent(getActivity(), JobViewActivity.class);
+
+                detailIntent.putExtra("title", selectedJob.getTitle());
+                detailIntent.putExtra("userType", userType);
+                status += "inprogress";
+                detailIntent.putExtra("status", status);
+                detailIntent.putExtra("previous", "user");
+                detailIntent.putExtra("key", key);
+                detailIntent.putExtra("pk", ipJobsArrayList.get(position).getPK());
+
+                startActivity(detailIntent);
+            }
+        });
+
+        pendingJobsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id) {
+                Job selectedJob = pendingJobsArrayList.get(position);
+
+                Intent detailIntent = new Intent(getActivity(), JobViewActivity.class);
+
+                detailIntent.putExtra("title", selectedJob.getTitle());
+                detailIntent.putExtra("userType", userType);
+                status += "pending";
+                detailIntent.putExtra("status", status);
+                detailIntent.putExtra("previous", "user");
+                detailIntent.putExtra("key", key);
+                detailIntent.putExtra("pk", ipJobsArrayList.get(position).getPK());
+
+                startActivity(detailIntent);
+            }
+        });
         return inflater.inflate(R.layout.fragment_current, container, false);
     }
 
@@ -78,12 +193,14 @@ public class CurrentFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        /*
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+        */
     }
 
     @Override
