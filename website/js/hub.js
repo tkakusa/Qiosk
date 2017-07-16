@@ -1,5 +1,5 @@
+var ip = '192.168.0.5';
 $(document).ready(function() {
-	var ip = '192.168.0.5';
 
 	$.ajax({
 			type: 'GET',
@@ -79,11 +79,37 @@ $(document).ready(function() {
 
 });
 
+function getPendingJobs() {
+	var response;
+	$.ajax({
+			type: 'GET',
+			url: "http://"+ip+":8000/pendingJobs/"+localStorage.getItem('token'),
+			crossDomain: true,
+			data: {
+				//'token' : localStorage.getItem('token')
+			},
+			contentType: "application/x-www-form-urlencoded",
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader('token', localStorage.getItem('token'));
+			},
+			success: function(responseData, textStatus, jqXHR) {
+				//alert(JSON.stringify(responseData));
+				response = responseData;				
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				alert("Browse Issue");
+			}
+	});
+	return response;
+}
+
 function fillInitial(json) {
 	//alert('Initial');
 	document.getElementById("brief-name").innerHTML = json.firstName + ' ' + json.lastName;
 	document.getElementById("brief-money").innerHTML = "$" + json.accountBalance;
 	document.getElementById("brief-rating").innerHTML = json.rating;
+	document.getElementsByClassName("money").innerHTML = "<h2>$" + json.accountBalance;
+	var response = getPendingJobs();
 }
 
 function fillJobs(json) {
