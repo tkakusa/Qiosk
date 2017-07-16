@@ -3,11 +3,15 @@ $(document).ready(function() {
 
 	$.ajax({
 			type: 'GET',
-			url: "http://"+ip+":8000/profile/"+localStorage.getItem('token'),
+			url: "http://"+ip+":8000/profile/",
+			headers: {
+				'Authorization':localStorage.getItem('token'),
+				'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+			},
 			crossDomain: true,
 			data: {
 			},
-			contentType: "application/x-www-form-urlencoded",
+			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 			success: function(responseData, textStatus, jqXHR) {
 				fillInitial(responseData);					
 			},
@@ -15,8 +19,6 @@ $(document).ready(function() {
 				//alert("Browse Issue");
 			}
 	});
-
-
 
 	$('#nav-profile').click(function() {
 		$('#current').removeClass('top middle bottom').addClass('top');
@@ -35,7 +37,11 @@ $(document).ready(function() {
 
 		$.ajax({
 				type: 'GET',
-				url: "http://"+ip+":8000/list/"+localStorage.getItem('token'),
+				url: "http://"+ip+":8000/list/",
+				headers: {
+					'Authorization':localStorage.getItem('token'),
+					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+				},
 				crossDomain: true,
 				data: {
 					//'token' : localStorage.getItem('token')

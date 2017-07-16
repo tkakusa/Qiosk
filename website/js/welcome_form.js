@@ -18,6 +18,7 @@ $(document).ready(function() {
 	});
 		
 	$("#form-signin").submit(function(e){
+		e.preventDefault();
 		$.ajax({
 				type: "post",
 				url: "http://"+ip+":8000/loginUser/",
@@ -35,6 +36,7 @@ $(document).ready(function() {
 	});
 	
 	$("#form-signup-worker").submit(function(e){
+		e.preventDefault();
 		$.ajax({
 				type: "post",
 				url: "http://"+ip+":8000/createUser/",
@@ -52,6 +54,7 @@ $(document).ready(function() {
 	});
 	
 	$("#form-signup-employer").submit(function(e){
+		e.preventDefault();
 		$.ajax({
 				type: "post",
 				url: "http://"+ip+":8000/createEmployer/",
