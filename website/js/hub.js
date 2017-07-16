@@ -46,7 +46,6 @@ $(document).ready(function() {
 				data: {
 					//'token' : localStorage.getItem('token')
 				},
-				contentType: "application/x-www-form-urlencoded",
 				success: function(responseData, textStatus, jqXHR) {
 					//alert(JSON.stringify(responseData));
 					fillJobs(responseData);					
@@ -89,14 +88,14 @@ function getPendingJobs() {
 	var response;
 	$.ajax({
 			type: 'GET',
-			url: "http://"+ip+":8000/pendingJobs/"+localStorage.getItem('token'),
+			url: "http://"+ip+":8000/pendingJobs/",
+			headers: {
+				'Authorization':localStorage.getItem('token'),
+				'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+			},
 			crossDomain: true,
 			data: {
 				//'token' : localStorage.getItem('token')
-			},
-			contentType: "application/x-www-form-urlencoded",
-			beforeSend: function(xhr) {
-				xhr.setRequestHeader('token', localStorage.getItem('token'));
 			},
 			success: function(responseData, textStatus, jqXHR) {
 				//alert(JSON.stringify(responseData));
@@ -147,12 +146,15 @@ function fillJobs(json) {
 			var pk = id.replace("accept","");
 			$.ajax({
 					type: 'POST',
-					url: "http://"+ip+":8000/joinJob/"+localStorage.getItem('token')+'/', 
+					url: "http://"+ip+":8000/joinJob/",
+					headers: {
+						'Authorization':localStorage.getItem('token'),
+						'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+					},
 					crossDomain: true,
 					data: {
 						'pk'	  : pk
 					},
-					contentType: "application/x-www-form-urlencoded",
 					success: function(responseData, textStatus, jqXHR) {
 						alert('Joined!');
 					},
