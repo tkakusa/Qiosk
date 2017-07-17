@@ -80,15 +80,15 @@
 								<h2 id="account-balance">$XX.XX</h2>	
 							</div>
 							<div class="row">
-								<p><span id="pending-jobs"></span> jobs in progress</p>
+								<p><span id="pending-jobs"></span> jobs pending</p>
+							</div>
+							<div class="row">
+								<p><span id="accepted-jobs"></span> jobs in progress</p>
 							</div>
 						</div>
 						<div class="large-4 medium-4 columns">
 							<div class="row">
 								<a href="#" class="button">Withdraw</a>		
-							</div>
-							<div class="row">
-								<p class="tiny">Last Updated: XX:XX:XX XX/XX/XX</p>
 							</div>
 						</div>
 					</div>
@@ -107,16 +107,13 @@
 									<p>Name:</p>
 									<p>Phone Number:</p>
 									<p>Email:</p>
-									<p>Address:</p>
 								</div>
 							</div>
 							<div class="large-8 medium-8 columns">
 								<div class="row">
-									<p>Cameron West</p>
-									<p>123-123-1234</p>
-									<p>example@example.com</p>
-									<p>Line 1, Line 1 Street</p>
-									<p>Line, Big Line. LN, BL 12345</p>
+									<p id="profile-name">Cameron West</p>
+									<p id="phone-number">123-123-1234</p>
+									<p id="email">example@example.com</p>
 								</div>
 							</div>
 						</div>
@@ -135,35 +132,15 @@
 											<th class="large-4 medium-4">Job Name</th>
 											<th class="large-4 medium-4">Employer</th>
 											<th class="large-3 medium-3">Pay</th>
-											<th class="large-2 medium-2">Done</th>
+											<th class="large-2 medium-2">Status</th>
 										</tr>
 									</thead>
-									<tbody>
-										<tr>
-											<td>Content</td>
-											<td>Cat</td>
-											<td>16.00</td>
-											<td>Y</td>
-										</tr>
-										<tr>
-											<td>Content</td>
-											<td>Cat</td>
-											<td>16.00</td>
-											<td>Y</td>
-										</tr>
-									</tr>
-									<tr>
-										<td>Content</td>
-										<td>Cat</td>
-										<td>16.00</td>
-										<td>Y</td>
-									</tr>
-								</tr>
-							</tbody>
-						</table>
+									<tbody id="job-table-body">
+									</tbody>
+								</table>
+							</div>
+						</div>	
 					</div>
-				</div>	
-			</div>
 		</div>
 	</div>
 	<div id="hub-browse" class="hub-browse hide">
