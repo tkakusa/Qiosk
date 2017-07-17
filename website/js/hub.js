@@ -48,7 +48,7 @@ $(document).ready(function() {
 				},
 				success: function(responseData, textStatus, jqXHR) {
 					//alert(JSON.stringify(responseData));
-					fillJobs(responseData);					
+					fillJobs(responseData, 1);
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 					alert("Browse Issue");
@@ -71,17 +71,51 @@ $(document).ready(function() {
 	$("#nav-profile").click(function() {
 		$("#hub-profile").removeClass("hide");
 		$("#hub-browse").removeClass("hide");
+		$("#hub-current").removeClass("hide");
 
 		$("#hub-browse").addClass("hide");
+		$("#hub-current").addClass("hide");
 	});
 
 	$("#nav-browse").click(function() {
 		$("#hub-browse").removeClass("hide");
 		$("#hub-profile").removeClass("hide");
+		$("#hub-current").removeClass("hide");
 
 		$("#hub-profile").addClass("hide");
+		$("#hub-current").addClass("hide");
 	});
 
+	$("#nav-current").click(function() {
+		$("#hub-browse").removeClass("hide");
+		$("#hub-profile").removeClass("hide");
+		$("#hub-current").removeClass("hide");
+
+		$("#hub-browse").addClass("hide");
+		$("#hub-profile").addClass("hide");
+		
+		$('div#job-card').remove();
+
+		$.ajax({
+				type: 'GET',
+				url: "http://"+ip+":8000/acceptedJobs/",
+				headers: {
+					'Authorization':localStorage.getItem('token'),
+					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+				},
+				crossDomain: true,
+				data: {
+					//'token' : localStorage.getItem('token')
+				},
+				success: function(responseData, textStatus, jqXHR) {
+					//alert(JSON.stringify(responseData));
+					fillJobs(responseData, 0);
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					alert("Browse Issue");
+				}
+		});
+	});
 });
 
 function getPendingJobs() {
@@ -117,7 +151,7 @@ function fillInitial(json) {
 	var response = getPendingJobs();
 }
 
-function fillJobs(json) {
+function fillJobs(json, accept) {
 	for (var i = 0; i < json.length; i++) {
 		var obj = json[i];
 
@@ -131,7 +165,11 @@ function fillJobs(json) {
 		var address = obj.address;
 		var stat = obj.status;
 
-		var s = '<div class="row"><div class="columns large-8 medium-8"><h2>'+name+'</h2><p>'+desc+'</p><p>'+address+'</p></div><div class="columns large-4 medium-4"><h3>$'+pay+'.00</h3><p>'+start+'</p><p>'+numPpl+'/'+numTotal+' accepted</p></div></div><div class="row"><a id="accept'+obj.pk+'" href="#" class="button large-6 medium-6 large-centered medium-centered columns">Accept</a></div>'
+		var s = '<div class="row"><div class="columns large-8 medium-8"><h2>'+name+'</h2><p>'+desc+'</p><p>'+address+'</p></div><div class="columns large-4 medium-4"><h3>$'+pay+'.00</h3><p>'+start+'</p><p>'+numPpl+'/'+numTotal+' accepted</p></div></div>';
+		
+		if (accept) {
+			s += '<div class="row"><a id="accept'+obj.pk+'" href="#" class="button large-6 medium-6 large-centered medium-centered columns">Accept</a></div>';
+		}
 
 		var div = document.createElement('div');
 		div.className = 'job-card row large-10 medium-10 card';
