@@ -98,27 +98,6 @@ $(document).ready(function() {
 				}
 		});
 	});
-	
-	$("#logout").click(function() {	
-		$.ajax({
-				type: 'DELETE',
-				url: "http://"+ip+":8000/logoutUser/",
-				headers: {
-					'Authorization':localStorage.getItem('token'),
-					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-				},
-				crossDomain: true,
-				data: {
-				},
-				success: function(responseData, textStatus, jqXHR) {
-					localStorage.removeItem('token');
-					window.location.replace("./index.html");
-				},
-				error: function(jqXHR, textStatus, errorThrown) {
-					alert("Logout Issue");
-				}
-		});
-	});
 });
 
 function getProfile(){
@@ -138,6 +117,29 @@ function getProfile(){
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 				//alert("Browse Issue");
+			}
+	});
+}
+
+function sendRating(userId, rating) {
+	sendUrl = "http://"+ip+":8000/userID="+userId+"/rating="+(rating*100);
+	$.ajax({
+			type: 'POST',
+			url: sendUrl,
+			headers: {
+				'Authorization':localStorage.getItem('token'),
+				'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+			},
+			crossDomain: true,
+			data: {
+				//'token' : localStorage.getItem('token')
+			},
+			/*
+			success: function(responseData, textStatus, jqXHR) {
+				document.getElementById("pending-jobs").innerHTML = responseData.length;		
+			},*/
+			error: function(jqXHR, textStatus, errorThrown) {
+				alert("Could not send rating.");
 			}
 	});
 }
