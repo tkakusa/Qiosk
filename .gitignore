@@ -13,6 +13,7 @@
 /.sass-cache/*
 *.DS_Store
 /stylesheets/*
+*.swp
 
 mysite/
 
