@@ -9981,12 +9981,12 @@ h1 {
   margin: 5px;
   font-size: 1.25em;
   display: inline-block;
-  content: "\f005";
+  content: "\2605";
 }
 
 /* line 176, ../scss/_hub.scss */
 .rating > .half:before {
-  content: "\f089";
+  content: "\2605";
   position: absolute;
 }
 
@@ -10002,7 +10002,7 @@ h1 {
 .rating > input:checked ~ label,
 .rating:not(:checked) > label:hover,
 .rating:not(:checked) > label:hover ~ label {
-  color: #FFD700;
+  color: yellow;
 }
 
 /* hover previous stars in list */
@@ -10011,5 +10011,5 @@ h1 {
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label,
 .rating > input:checked ~ label:hover ~ label {
-  color: #FFED85;
+  color: orange;
 }

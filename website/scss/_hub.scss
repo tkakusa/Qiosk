@@ -170,11 +170,11 @@ h1 { font-size: 1.5em; margin: 10px; }
 	font-size: 1.25em;
 	//font-family: FontAwesome;
 	display: inline-block;
-	content: "\f005";
+	content: "\2605";
 }
 
 .rating > .half:before { 
-	content: "\f089";
+	content: "\2605";
 	position: absolute;
 }
 
@@ -187,9 +187,9 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 .rating > input:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+.rating:not(:checked) > label:hover ~ label { color: yellow;  } /* hover previous stars in list */
 
 .rating > input:checked + label:hover, /* hover current star when changing rating */
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+.rating > input:checked ~ label:hover ~ label { color: orange;  } 
