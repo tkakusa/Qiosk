@@ -116,6 +116,27 @@ $(document).ready(function() {
 				}
 		});
 	});
+	
+	$("#logout").click(function() {	
+		$.ajax({
+				type: 'DELETE',
+				url: "http://"+ip+":8000/logoutUser/",
+				headers: {
+					'Authorization':localStorage.getItem('token'),
+					'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+				},
+				crossDomain: true,
+				data: {
+				},
+				success: function(responseData, textStatus, jqXHR) {
+					localStorage.removeItem('token');
+					window.location.replace("./index.html");
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					alert("Logout Issue");
+				}
+		});
+	});
 });
 
 function fillPendingJobs(response) {
