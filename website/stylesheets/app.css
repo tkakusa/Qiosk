@@ -9952,3 +9952,64 @@ div {
 .card.job-card .job-table thead {
   background-color: transparent;
 }
+
+/* line 159, ../scss/_hub.scss */
+fieldset, label {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 160, ../scss/_hub.scss */
+h1 {
+  font-size: 1.5em;
+  margin: 10px;
+}
+
+/* line 162, ../scss/_hub.scss */
+.rating {
+  border: none;
+  float: left;
+}
+
+/* line 167, ../scss/_hub.scss */
+.rating > input {
+  display: none;
+}
+
+/* line 168, ../scss/_hub.scss */
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  display: inline-block;
+  content: "\f005";
+}
+
+/* line 176, ../scss/_hub.scss */
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+/* line 181, ../scss/_hub.scss */
+.rating > label {
+  color: #ddd;
+  float: right;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+/* line 188, ../scss/_hub.scss */
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #FFD700;
+}
+
+/* hover previous stars in list */
+/* line 192, ../scss/_hub.scss */
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+  color: #FFED85;
+}
