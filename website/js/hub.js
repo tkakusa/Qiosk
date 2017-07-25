@@ -1,24 +1,7 @@
 var ip = '192.168.0.5';
 $(document).ready(function() {
 
-	$.ajax({
-			type: 'GET',
-			url: "http://"+ip+":8000/profile/",
-			headers: {
-				'Authorization':localStorage.getItem('token'),
-				'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-			},
-			crossDomain: true,
-			data: {
-			},
-			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-			success: function(responseData, textStatus, jqXHR) {
-				fillInitial(responseData);					
-			},
-			error: function(jqXHR, textStatus, errorThrown) {
-				//alert("Browse Issue");
-			}
-	});
+	getProfile();
 
 	$('#nav-profile').click(function() {
 		$('#current').removeClass('top middle bottom').addClass('top');
@@ -71,8 +54,7 @@ $(document).ready(function() {
 	$("#nav-profile").click(function() {
 		$("#hub-profile").removeClass("hide");
 		$("#hub-browse").removeClass("hide");
-		$("#hub-current").removeClass("hide");
-
+		getProfile();
 		$("#hub-browse").addClass("hide");
 		$("#hub-current").addClass("hide");
 	});
@@ -139,8 +121,25 @@ $(document).ready(function() {
 	});
 });
 
-function fillPendingJobs(response) {
-	
+function getProfile(){
+	$.ajax({
+			type: 'GET',
+			url: "http://"+ip+":8000/profile/",
+			headers: {
+				'Authorization':localStorage.getItem('token'),
+				'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+			},
+			crossDomain: true,
+			data: {
+			},
+			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+			success: function(responseData, textStatus, jqXHR) {
+				fillInitial(responseData);					
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				//alert("Browse Issue");
+			}
+	});
 }
 
 function getPendingJobs() {
@@ -164,6 +163,61 @@ function getPendingJobs() {
 	});
 }
 
+function getAcceptedJobs() {
+	$.ajax({
+			type: 'GET',
+			url: "http://"+ip+":8000/acceptedJobs/",
+			headers: {
+				'Authorization':localStorage.getItem('token'),
+				'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+			},
+			crossDomain: true,
+			data: {
+				//'token' : localStorage.getItem('token')
+			},
+			success: function(responseData, textStatus, jqXHR) {
+				document.getElementById("accepted-jobs").innerHTML = responseData.length;		
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				alert("Browse Issue");
+			}
+	});
+}
+
+function fillCompletedJobs(response) {
+	var tbody = document.getElementById("job-table-body");
+	tbody.innerHTML = "";
+	for(i = 0; i < response.length; i++){
+		var jobName = response[i].title;
+		var employer = response[i].employer.firstName + " " + response[i].employer.lastName;
+		var payment = response[i].payment;
+		var status = response[i].status;
+		var row = '<tr><td>' + jobName + '</td><td>' + employer + '</td><td>' + payment + '</td><td>' + status + '</td></tr>';
+		$('#job-table-body').append(row);
+	}
+}
+
+function getCompletedJobs() {
+	$.ajax({
+			type: 'GET',
+			url: "http://"+ip+":8000/completedJobs/",
+			headers: {
+				'Authorization':localStorage.getItem('token'),
+				'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+			},
+			crossDomain: true,
+			data: {
+				//'token' : localStorage.getItem('token')
+			},
+			success: function(responseData, textStatus, jqXHR) {
+				fillCompletedJobs(responseData);
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				alert("Browse Issue");
+			}
+	});
+}
+
 function fillInitial(json) {
 	//alert('Initial');
 	document.getElementById("brief-name").innerHTML = json.firstName + ' ' + json.lastName;
@@ -171,6 +225,11 @@ function fillInitial(json) {
 	document.getElementById("brief-rating").innerHTML = json.rating;
 	document.getElementById("account-balance").innerHTML = "Balance: $" + json.accountBalance;
 	getPendingJobs();
+	getAcceptedJobs();
+	document.getElementById("profile-name").innerHTML = json.firstName + " " + json.middleName + " " + json.lastName;
+	document.getElementById("phone-number").innerHTML = json.phoneNumber;
+	document.getElementById("email").innerHTML = json.email;
+	getCompletedJobs();
 }
 
 function fillJobs(json, accept) {
