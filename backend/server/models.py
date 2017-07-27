@@ -23,6 +23,8 @@ class UserModel(models.Model):
     accountBalance = models.FloatField(default=0)
     jobsDone = models.IntegerField(default=0)
     rating = models.IntegerField(default=0)
+    rating_count = models.IntegerField(default=1)
+    email = models.CharField(max_length=200, blank=True, default='')
 
     class Meta:
         ordering = ('lastName',)
@@ -37,6 +39,9 @@ class EmployerModel(models.Model):
     lastName = models.CharField(max_length=200)
     phoneNumber = models.IntegerField(default=0)
     address = models.CharField(max_length=200)
+    accountBalance = models.FloatField(default=0)
+    rating = models.IntegerField(default=0)
+    rating_count = models.IntegerField(default=1)
 
     class Meta:
         ordering = ('lastName',)
@@ -53,7 +58,7 @@ class Tag(models.Model):
 
 class Job(models.Model):
     tags = models.ManyToManyField(Tag, blank=True)
-    employer = models.ForeignKey(EmployerModel, related_name='employer', on_delete=models.CASCADE, default=0)
+    employer = models.ForeignKey(EmployerModel, related_name='employer', on_delete=models.CASCADE, blank=True)
     employeesPending = models.ManyToManyField(UserModel, related_name='employeesPending', blank=True)
     employeesAccepted = models.ManyToManyField(UserModel, related_name='employeesAccepted', blank=True)
     payment = models.IntegerField(default=0)
