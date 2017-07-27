@@ -1,7 +1,5 @@
 $(document).ready(function() {
-
 	var ip = 'localhost';
-
 
 	$('#swap2employer').click(function() {
 		//hide worker form
