@@ -1,4 +1,6 @@
-var ip = '192.168.0.6';
+
+var ip = 'localhost';
+
 $(document).ready(function() {
 
 	getProfile();

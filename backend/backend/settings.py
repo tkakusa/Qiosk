@@ -12,6 +12,24 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+CSRF_TRUSTED_ORIGINS = (
+    'localhost', '10.73.62.125', '192.168.0.7'
+)
+
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+)
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +43,7 @@ SECRET_KEY = '158@d8(04)6t9auxyuw5fke8p1j4tmwd$a&puj-(o1*#n9ae!)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '10.73.62.125', '192.168.0.5']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,4 +143,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CORS_ORIGIN_ALLOW_ALL = True
+
