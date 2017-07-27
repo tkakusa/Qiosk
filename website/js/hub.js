@@ -224,7 +224,7 @@ function fillInitial(json) {
 	//alert('Initial');
 	document.getElementById("brief-name").innerHTML = json.firstName + ' ' + json.lastName;
 	document.getElementById("brief-money").innerHTML = "$" + json.accountBalance;
-	document.getElementById("brief-rating").innerHTML = json.rating;
+	document.getElementById("brief-rating-text").innerHTML = json.rating / 100;
 	document.getElementById("account-balance").innerHTML = "Balance: $" + json.accountBalance;
 	getPendingJobs();
 	getAcceptedJobs();
