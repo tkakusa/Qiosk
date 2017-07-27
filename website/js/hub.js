@@ -244,8 +244,8 @@ function fillJobs(json, accept) {
 		var desc = obj.description;
 		var start = obj.startDate;
 		var create = obj.postDate;
-		var numPpl = obj.numberPeopleNeeded;
-		var numTotal = obj.numberPeopleAccepted;
+		var numTotal = obj.numberPeopleNeeded;
+		var numPpl = obj.numberPeopleAccepted;
 		var address = obj.address;
 		var stat = obj.status;
 
