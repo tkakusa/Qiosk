@@ -248,17 +248,20 @@ function fillJobs(json, accept) {
 		var address = obj.address;
 		var stat = obj.status;
 
-		var s = '<div class="row"><div class="columns large-8 medium-8"><h2>'+name+'</h2><p>'+desc+'</p><p>'+address+'</p></div><div class="columns large-4 medium-4"><h3>$'+pay+'.00</h3><p>'+start+'</p><p>'+numPpl+'/'+numTotal+' accepted</p></div></div>';
-		
-		if (accept) {
-			s += '<div class="row"><a id="accept'+obj.pk+'" href="#" class="button large-6 medium-6 large-centered medium-centered columns">Accept</a></div>';
-		}
+		//if current page and status is in progress, display
+		if (!accept && (stat === 'in progress')) {
+			var s = '<div class="row"><div class="columns large-8 medium-8"><h2>'+name+'</h2><p>'+desc+'</p><p>'+address+'</p></div><div class="columns large-4 medium-4"><h3>$'+pay+'.00</h3><p>'+start+'</p><p>'+numPpl+'/'+numTotal+' accepted</p></div></div>';
 
-		var div = document.createElement('div');
-		div.className = 'job-card row large-10 medium-10 card';
-		div.id ='job-card';
-		div.innerHTML = s;
-		$('.all').append(div);
+			if (accept) {
+				s += '<div class="row"><a id="accept'+obj.pk+'" href="#" class="button large-6 medium-6 large-centered medium-centered columns">Accept</a></div>';
+			}
+
+			var div = document.createElement('div');
+			div.className = 'job-card row large-10 medium-10 card';
+			div.id ='job-card';
+			div.innerHTML = s;
+			$('.all').append(div);
+		}
 	}
 
 	$('a').click(function() {
@@ -285,4 +288,4 @@ function fillJobs(json, accept) {
 			});
 		}
 	});
-}
+	}
