@@ -250,7 +250,7 @@ function fillJobs(json, accept) {
 		var stat = obj.status;
 
 		//if current page and status is in progress, display
-		if (accept || (!accept && (stat === 'in progress'))) {
+		if ((accept && (stat === "open")) || (!accept && (stat === 'in progress'))) {
 			var s = '<div class="row"><div class="columns large-8 medium-8"><h2>'+name+'</h2><p>'+desc+'</p><p>'+address+'</p></div><div class="columns large-4 medium-4"><h3>$'+pay+'.00</h3><p>'+create+'</p><p>'+numPpl+'/'+numTotal+' accepted</p></div></div>';
 
 			if (accept) {
